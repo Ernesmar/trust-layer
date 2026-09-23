@@ -39,10 +39,19 @@ lenguaje de "certificación" o "compliance garantizado", frénala y pregunta.
   `tests/integration/` existe pero está **vacía** — depende del adaptador
   Postgres que aún no existe.
 - CI: `.github/workflows/ci.yml` define 4 gates (lint, tests, escaneo de
-  dependencias, build). No verificado corriendo en GitHub Actions real
-  todavía — solo localmente.
+  dependencias, build). **Verificado corriendo en verde en GitHub Actions
+  real** en `github.com/Ernesmar/trust-layer` (rama `main`).
 - SDK MCP: usa `mcp[cli]>=2.0.0` (API `MCPServer`, no `FastMCP` — eso es
   la v1, no lo reintroduzcas).
+- Repo público: `github.com/Ernesmar/trust-layer`. Listado en el
+  MCP Registry oficial como `io.github.Ernesmar/trust-layer` (ver
+  `server.json`, listing de solo-descubrimiento sin `packages` porque
+  el proyecto no está en PyPI todavía).
+- MCPBundles: pendiente. Su flujo de publicación exige una URL de
+  servidor MCP remoto (HTTP/SSE) para verificar propiedad; el servidor
+  hoy es local/stdio-only, sin endpoint desplegado. No forzar un
+  despliegue solo para listar ahí — retomar si surge señal real de
+  adopción (tarea 2) o necesidad concreta de un endpoint remoto.
 
 ## Reglas de ingeniería que no se negocian
 
@@ -71,10 +80,10 @@ python -m src.mcp_server.servidor   # levanta el servidor
 
 ## Próximas tareas, en orden
 
-1. **Publicación mínima (prioridad actual).** Empujar este repo a GitHub
-   público, confirmar que `ci.yml` corre en verde en Actions real, listar
-   en MCP Registry y MCPBundles. Ningún cambio de código requerido para
-   esto — es un paso de distribución, no de ingeniería.
+1. **Publicación mínima — hecho salvo un pendiente.** Repo público en
+   GitHub ✅, `ci.yml` en verde en Actions real ✅, listado en el MCP
+   Registry oficial ✅. MCPBundles queda pendiente: exige un endpoint
+   MCP remoto que este proyecto no tiene (ver nota en "Estado actual").
 2. **Validar con la comunidad antes de seguir construyendo.** No avanzar
    a la tarea 3 hasta tener señal real de adopción (ver plan de
    validación en la especificación original del proyecto — comunidades

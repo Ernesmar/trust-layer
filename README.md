@@ -43,3 +43,6 @@ Fase 1, primera versión: `verificar_identidad_agente` +
 `registrar_accion_auditable` + `verificar_historial`, con adaptadores en
 memoria. Sin pagos, sin certificación normativa — ver ADR 0001 y el
 documento de diseño para el porqué de cada decisión.
+
+Listado en el [MCP Registry oficial](https://registry.modelcontextprotocol.io)
+como `io.github.Ernesmar/trust-layer`.
