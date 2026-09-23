@@ -1,0 +1,10 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Ernesmar/trust-layer",
+  "description": "Notario verificable de agentes de IA: registra identidad y acciones en un log inmutable y firmado.",
+  "repository": {
+    "url": "https://github.com/Ernesmar/trust-layer",
+    "source": "github"
+  },
+  "version": "0.1.0"
+}
