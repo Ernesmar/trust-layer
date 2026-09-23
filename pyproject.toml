@@ -1,0 +1,25 @@
+[project]
+name = "registro-de-confianza-agentes"
+version = "0.1.0"
+description = "Servidor MCP: notario verificable de identidad y acciones de agentes de IA"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli]>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=5.0.0",
+    "ruff>=0.6.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

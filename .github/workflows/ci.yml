@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: pip install -e ".[dev]"
+
+      - name: Lint
+        run: ruff check .
+
+      - name: Unit + contract tests con cobertura
+        run: pytest tests/unit tests/contract --cov=src --cov-report=term-missing --cov-fail-under=85
+
+      # tests/integration corre aparte cuando exista el adaptador Postgres real
+      # (requiere un servicio de base de datos en el job); se añade en cuanto
+      # se implemente RepositorioAgentesPostgres / RepositorioRegistrosPostgres.
+
+      - name: Escaneo de seguridad de dependencias
+        run: pip install pip-audit && pip-audit
