@@ -102,6 +102,20 @@ python -m src.mcp_server.servidor   # levanta el servidor
    pagos cripto agente-a-agente sobre x402/AP2, que dispare automáticamente
    un registro de auditoría por cada pago. Diseño pendiente de detallar.
 
+## Herramientas de desarrollo (Everything Claude Code)
+
+Instalación **selectiva** en `.claude/` desde `github.com/affaan-m/everything-claude-code`
+(MIT, licencia en `.claude/ECC-LICENSE`). Solo se copió lo que encaja con el proyecto:
+
+- Skills: `hexagonal-architecture`, `python-patterns`, `python-testing`,
+  `architecture-decision-records`, `mcp-server-patterns`, `security-review`, `tdd-workflow`.
+- Agentes: `python-reviewer`, `security-reviewer`, `code-reviewer`, `tdd-guide`.
+- **Sin hooks ni reglas** de ECC: no activar sin decisión explícita.
+- Son ayudas para desarrollar, no parte del producto. Si algún skill sugiere
+  lenguaje de "certificación" o "compliance garantizado" para textos de cara al
+  usuario, prevalece la Regla de oro de este archivo.
+- Los skills de Postgres de ECC no se instalaron: la tarea 3 sigue condicionada a la tarea 2.
+
 ## Qué NO hacer sin preguntar primero
 
 - No agregar blockchain real / ledger distribuido (ver ADR 0001).
