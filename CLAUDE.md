@@ -107,13 +107,15 @@ python -m src.mcp_server.servidor   # levanta el servidor
 Instalación **selectiva** en `.claude/` desde `github.com/affaan-m/everything-claude-code`
 (MIT, licencia en `.claude/ECC-LICENSE`). Solo se copió lo que encaja con el proyecto:
 
-- Skills: `hexagonal-architecture`, `python-patterns`, `python-testing`,
-  `architecture-decision-records`, `mcp-server-patterns`, `security-review`, `tdd-workflow`.
+- Skills: `python-patterns`, `python-testing`, `architecture-decision-records`,
+  `security-review`, `tdd-workflow`.
 - Agentes: `python-reviewer`, `security-reviewer`, `code-reviewer`, `tdd-guide`.
 - **Sin hooks ni reglas** de ECC: no activar sin decisión explícita.
 - Son ayudas para desarrollar, no parte del producto. Si algún skill sugiere
   lenguaje de "certificación" o "compliance garantizado" para textos de cara al
   usuario, prevalece la Regla de oro de este archivo.
+- Se descartaron `hexagonal-architecture` y `mcp-server-patterns` (ejemplos en TS/Java/Node;
+  el segundo podría inducir a una API de SDK equivocada, ver "SDK MCP" arriba).
 - Los skills de Postgres de ECC no se instalaron: la tarea 3 sigue condicionada a la tarea 2.
 
 ## Qué NO hacer sin preguntar primero
